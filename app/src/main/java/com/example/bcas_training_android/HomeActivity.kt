@@ -14,6 +14,19 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnToPersegi.setOnClickListener {
+            intentTo(PersegiActivity::class.java)
+        }
+
+        binding.btnToPersegiPanjang.setOnClickListener {
+            intentTo(PersegiPanjangActivity::class.java)
+        }
+
+    }
+
+    private fun intentTo(classs: Class<*>){
+        val intent = Intent(this, classs)
+        startActivity(intent)
     }
 
 
