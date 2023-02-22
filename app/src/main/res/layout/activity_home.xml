@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btn_to_calculator"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="GO TO CALCULATOR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_to_persegi"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Hitung Persegi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_calculator" />
+
+    <Button
+        android:id="@+id/btn_to_persegi_panjang"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Hitung Persegi Panjang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_persegi" />
+
+    <Button
+        android:id="@+id/btn_to_segitiga"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Hitung Segitiga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_persegi_panjang" />
+
+    <Button
+        android:id="@+id/btn_to_lingkaran"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Hitung Lingkan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_to_segitiga" />
+</androidx.constraintlayout.widget.ConstraintLayout>
