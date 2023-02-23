@@ -3,6 +3,8 @@ package com.example.bcas_training_android
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bcas_training_android.calculator.PersegiActivity
+import com.example.bcas_training_android.calculator.PersegiPanjangActivity
 import com.example.bcas_training_android.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.bcas_training_android
+package com.example.bcas_training_android.calculator
 
 class PersegiPanjang : BangunDatar("persegi_panjang") {
     var panjang:Int = 0

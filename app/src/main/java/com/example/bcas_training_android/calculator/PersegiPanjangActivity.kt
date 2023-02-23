@@ -1,8 +1,7 @@
-package com.example.bcas_training_android
+package com.example.bcas_training_android.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.bcas_training_android.databinding.ActivityPersegiBinding
 import com.example.bcas_training_android.databinding.ActivityPersegiPanjangBinding
 
 class PersegiPanjangActivity : AppCompatActivity() {
