@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.bcas_training_android.HomeActivity
 import com.example.bcas_training_android.ProfileActivity
 import com.example.bcas_training_android.databinding.ActivityLoginBinding
 import java.text.StringCharacterIterator
@@ -25,9 +26,9 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            val intent = Intent(this,ProfileActivity::class.java)
-            intent.putExtra("email",email)
-            intent.putExtra("password",password)
+            val intent = Intent(this,HomeActivity::class.java)
+            intent.putExtra(KEY_EMAIL,email)
+            intent.putExtra(KEY_PASSWORD,password)
             startActivity(intent)
 //            if (email == "" && password == "") {
 //                Toast.makeText(this, "Data Tidak Boleh Kosong", Toast.LENGTH_LONG).show()
@@ -35,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
 //            intentToScreenWithInput(ProfileActivity::class.java, email, password)
 //            }
         }
+
     }
 
     private fun intentTo(screen: Class<*>) {
@@ -53,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
     companion object {
         const val KEY_NAME = "name"
+        const val KEY_EMAIL = "email"
         const val KEY_PASSWORD = "password"
         const val KEY_INPUT = "input"
     }

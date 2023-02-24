@@ -17,38 +17,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_to_persegi"
+        android:id="@+id/btn_to_profile"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:text="Hitung Persegi"
+        android:text="Go TO Profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_to_calculator" />
 
-    <Button
-        android:id="@+id/btn_to_persegi_panjang"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:text="Hitung Persegi Panjang"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_to_persegi" />
 
-    <Button
-        android:id="@+id/btn_to_segitiga"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:text="Hitung Segitiga"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_to_persegi_panjang" />
-
-    <Button
-        android:id="@+id/btn_to_lingkaran"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:text="Hitung Lingkan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_to_segitiga" />
 </androidx.constraintlayout.widget.ConstraintLayout>
