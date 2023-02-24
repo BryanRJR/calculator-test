@@ -1,9 +1,10 @@
-package com.example.bcas_training_android
+package com.example.bcas_training_android.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.bcas_training_android.databinding.ActivityHomeBinding
+import com.example.bcas_training_android.formula.Persegi
 import com.example.bcas_training_android.databinding.ActivityPersegiBinding
+import com.example.bcas_training_android.utils.toIntOrNol
 
 class PersegiActivity : AppCompatActivity() {
 
@@ -15,11 +16,13 @@ class PersegiActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnHitung.setOnClickListener {
-            val sisi = binding.etSisi.text.toString().toIntOrNull()
+            val sisi = binding.etSisi.text.toString().toIntOrNol()
             val persegi = Persegi()
-            persegi.sisi = sisi ?: 0
+            persegi.sisi = sisi
 
-            val result = persegi.hitung()
+            val result = persegi.hitung { keterangan ->
+                println(keterangan)
+            }
             binding.tvResult.text = result.toString()
         }
     }

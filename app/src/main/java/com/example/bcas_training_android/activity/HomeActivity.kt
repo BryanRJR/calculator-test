@@ -1,4 +1,4 @@
-package com.example.bcas_training_android
+package com.example.bcas_training_android.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +20,10 @@ class HomeActivity : AppCompatActivity() {
 
         binding.btnToPersegiPanjang.setOnClickListener {
             intentTo(PersegiPanjangActivity::class.java)
+        }
+
+        binding.btnToSegitiga.setOnClickListener {
+            intentTo(SegitigaActivity::class.java)
         }
 
     }

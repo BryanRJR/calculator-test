@@ -1,8 +1,9 @@
-package com.example.bcas_training_android
+package com.example.bcas_training_android.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bcas_training_android.utils.OperatorType
 import com.example.bcas_training_android.databinding.ActivityCalculatorBinding
 
 class CalculatorActivity : AppCompatActivity() {
@@ -52,7 +53,7 @@ class CalculatorActivity : AppCompatActivity() {
             .toInt()
 
         when (operatorType) {
-            OperatorType.TAMBAH-> {
+            OperatorType.TAMBAH -> {
                 // penambahan
                 tambah()
             }
