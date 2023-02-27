@@ -2,6 +2,7 @@ package com.example.bcas_training_android.detail
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bcas_training_android.databinding.ActivityDetailBinding
@@ -16,6 +17,10 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setDataToViewDetail()
+
+        binding.btnBack.setOnClickListener {
+            binding.btnBack.setBackgroundColor(Color.BLUE)
+        }
 
     }
 

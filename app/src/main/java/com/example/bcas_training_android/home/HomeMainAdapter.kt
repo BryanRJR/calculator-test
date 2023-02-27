@@ -17,6 +17,7 @@ class HomeMainAdapter (private val dataNews: List<NewsModel>, private val onClic
     ) {
         fun bindView(data: NewsModel, onClickNews: (NewsModel) -> Unit) {
             binding.ivNews.setImageResource(data.image ?: 0)
+            binding.ivSubImage.setImageResource(data.image)
             binding.tvTitle.text = data.title
             binding.tvDescNews.text = data.descNews
 
