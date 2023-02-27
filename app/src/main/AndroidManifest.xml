@@ -13,14 +13,14 @@
         android:theme="@style/Theme.Bcastrainingandroid"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".detail.DetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".calculator.PersegiPanjangActivity"
+            android:name=".auth.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -35,15 +35,12 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".calculator.PersegiActivity"
             android:exported="false" />
         <activity
             android:name=".calculator.CalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".auth.LoginActivity"
+            android:name=".home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,11 +3,8 @@ package com.example.bcas_training_android.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.bcas_training_android.HomeActivity
-import com.example.bcas_training_android.ProfileActivity
+import com.example.bcas_training_android.home.HomeActivity
 import com.example.bcas_training_android.databinding.ActivityLoginBinding
-import java.text.StringCharacterIterator
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -26,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
-            val intent = Intent(this,HomeActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             intent.putExtra(KEY_EMAIL,email)
             intent.putExtra(KEY_PASSWORD,password)
             startActivity(intent)

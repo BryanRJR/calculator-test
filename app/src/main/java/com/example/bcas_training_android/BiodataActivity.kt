@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bcas_training_android.databinding.ActivityBiodataBinding
+import com.example.bcas_training_android.home.HomeActivity
 
 class BiodataActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBiodataBinding

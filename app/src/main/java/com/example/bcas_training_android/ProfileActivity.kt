@@ -33,4 +33,11 @@ class ProfileActivity : AppCompatActivity() {
         val intent = Intent(this, screen)
         startActivity(intent)
     }
+
+    companion object {
+        private const val dataNews = "dataNews"
+        fun navigateToActivityDetail() = Intent().apply {
+
+        }
+    }
 }
