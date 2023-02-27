@@ -1,10 +1,12 @@
 package com.example.bcas_training_android.activity
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcas_training_android.formula.Persegi
 import com.example.bcas_training_android.databinding.ActivityPersegiBinding
 import com.example.bcas_training_android.utils.toIntOrNol
+import com.example.bcas_training_android.utils.toast
 
 class PersegiActivity : AppCompatActivity() {
 
@@ -16,6 +18,10 @@ class PersegiActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnHitung.setOnClickListener {
+            if (binding.etSisi.text.toString().isEmpty())
+            {
+                toast("Field Tidak Boleh Kosong")
+            } else {
             val sisi = binding.etSisi.text.toString().toIntOrNol()
             val persegi = Persegi()
             persegi.sisi = sisi
@@ -24,6 +30,7 @@ class PersegiActivity : AppCompatActivity() {
                 println(keterangan)
             }
             binding.tvResult.text = result.toString()
+            }
         }
     }
 }
