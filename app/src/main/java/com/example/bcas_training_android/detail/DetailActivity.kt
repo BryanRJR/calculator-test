@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bcas_training_android.ProfileActivity
 import com.example.bcas_training_android.databinding.ActivityDetailBinding
 import com.example.bcas_training_android.model.NewsModel
 
@@ -19,7 +20,8 @@ class DetailActivity : AppCompatActivity() {
         setDataToViewDetail()
 
         binding.btnBack.setOnClickListener {
-            binding.btnBack.setBackgroundColor(Color.BLUE)
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
     }

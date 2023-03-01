@@ -9,8 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bcas_training_android.databinding.ItemNewsBinding
 import com.example.bcas_training_android.model.NewsModel
 
-class HomeMainAdapter (private val dataNews: List<NewsModel>, private val onClickNews: (NewsModel) -> Unit
-): RecyclerView.Adapter<HomeMainAdapter.HomeMainViewHolder>() {
+class HomeMainAdapter : RecyclerView.Adapter<HomeMainAdapter.HomeMainViewHolder>() {
+
+    private val dataNews: MutableList<NewsModel> = mutableListOf()
+    private var onClickNews: (NewsModel) -> Unit = {}
+
+    fun addDataNews(newData: List<NewsModel>) {
+        dataNews.addAll(newData)
+        notifyDataSetChanged()
+    }
+
+    fun addOnClickNews(clickNews: (NewsModel) -> Unit) {
+        onClickNews = clickNews
+    }
 
     inner class HomeMainViewHolder(val binding: ItemNewsBinding) : RecyclerView.ViewHolder(
         binding.root
