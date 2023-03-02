@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.bcas_training_android.R
 import com.example.bcas_training_android.databinding.HomeFragmentBinding
 import com.example.bcas_training_android.databinding.SuccessRegisterFragmentBinding
+import com.example.bcas_training_android.latihanfragment.foodmenu.FoodMenuFragment
 import com.example.bcas_training_android.latihanfragment.inputbiodata.InputBiodataFragment
 
 class HomeFragment : Fragment() {
@@ -28,6 +29,9 @@ class HomeFragment : Fragment() {
         binding.btnRegister.setOnClickListener {
             navigateToRegister()
         }
+        binding.btnHost.setOnClickListener {
+            navigateToFood()
+        }
     }
 
     private fun navigateToRegister() {
@@ -39,7 +43,17 @@ class HomeFragment : Fragment() {
             .commit()
     }
 
+    private fun navigateToFood() {
+        val foodFragment = FoodMenuFragment()
+        parentFragmentManager.beginTransaction().replace(R.id.fragment_container, foodFragment)
+            .addToBackStack(
+                FOOD_FRAGMENT_KEY
+            )
+            .commit()
+    }
+
     companion object {
         const val REGISTER_FRAGMENT_KEY = "register"
+        const val FOOD_FRAGMENT_KEY = "food"
     }
 }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.bcas_training_android.R
 import com.example.bcas_training_android.databinding.ActivityHostBinding
+import com.example.bcas_training_android.latihanfragment.foodmenu.FoodMenuFragment
+import com.example.bcas_training_android.latihanfragment.home.HomeFragment
 import com.example.bcas_training_android.latihanfragment.inputbiodata.InputBiodataFragment
 
 class HostActivity : AppCompatActivity() {
@@ -13,11 +15,12 @@ class HostActivity : AppCompatActivity() {
         binding = ActivityHostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initBiodataFragment()
+        initHomeFragment()
     }
 
-    private fun initBiodataFragment() {
-        val inputBiodataFragment = InputBiodataFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, inputBiodataFragment).commit()
+    private fun initHomeFragment() {
+        val homeFragment = HomeFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, homeFragment).commit()
     }
+
 }
