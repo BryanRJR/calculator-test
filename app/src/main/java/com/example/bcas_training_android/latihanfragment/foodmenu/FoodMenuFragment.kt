@@ -8,12 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bcas_training_android.R
+import com.example.bcas_training_android.adapter.CategoryFoodAdapter
 import com.example.bcas_training_android.databinding.FragmentFoodMenuBinding
+import com.example.bcas_training_android.model.CategoryFoodModel
+import com.example.bcas_training_android.model.CategoryModel
 import com.example.bcas_training_android.model.FoodModel
 
 class FoodMenuFragment : Fragment() {
     private var binding: FragmentFoodMenuBinding? = null
     private val foodAdapter = FoodAdapter()
+    private val categoryFoodAdapter = CategoryFoodAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,8 +31,28 @@ class FoodMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         foodAdapter.setData(populateData())
+        categoryFoodAdapter.setData(populateDataFoodCategory())
+
         binding?.rvFood?.adapter = foodAdapter
-        binding?.etSearch?.addTextChangedListener(object : TextWatcher{
+        binding?.rvCategoryFood?.adapter = categoryFoodAdapter
+        
+        categoryFoodAdapter.addOnClickFoodCategoryItem { categoryFoodModel ->  
+            val categoryFoodData = populateDataFoodCategory()
+            val category = categoryFoodData.map {
+                val categoryId = categoryFoodModel.id
+                val isSelected = it.id == categoryId
+                it.copy(isSelected = isSelected)
+            }
+            categoryFoodAdapter.setData(category.toMutableList())
+
+            val data = populateData()
+            val filterData = data.filter { dataFood ->
+                dataFood.category == categoryFoodModel.title
+            }
+            foodAdapter.setData(filterData.toMutableList())
+        }
+
+        binding?.etSearch?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -57,25 +81,25 @@ class FoodMenuFragment : Fragment() {
         }
     }
 
-    private fun populateData(): MutableList<FoodModel>{
+    private fun populateData(): MutableList<FoodModel> {
         val listData = mutableListOf(
             FoodModel(
                 image = "https://tribratanews.polri.go.id/web/image/blog.post/50469/image",
                 title = "Ketoprak",
                 descFood = "Lorem ipsum hujan terus nih hehehe lapar pingin pop mie,",
-                category = "Ketoprak"
+                category = "Manis"
             ),
             FoodModel(
                 image = "https://tribratanews.polri.go.id/web/image/blog.post/50469/image",
                 title = "Makanan Pedas",
                 descFood = "Lorem ipsum hujan terus nih hehehe lapar pingin pop mie,",
-                category = "Makanan Pedas"
+                category = "Pedas"
             ),
             FoodModel(
                 image = "https://tribratanews.polri.go.id/web/image/blog.post/50469/image",
                 title = "Tempe",
                 descFood = "Lorem ipsum hujan terus nih hehehe lapar pingin pop mie,",
-                category = "Tempe"
+                category = "Asin"
             ),
             FoodModel(
                 image = "https://tribratanews.polri.go.id/web/image/blog.post/50469/image",
@@ -85,6 +109,44 @@ class FoodMenuFragment : Fragment() {
             ),
         )
         return listData
+    }
+
+    private fun populateDataFoodCategory(): MutableList<CategoryFoodModel> {
+        val listData = mutableListOf(
+            CategoryFoodModel(
+                id = 1,
+                title = "Pedas",
+                isSelected = false
+            ),
+            CategoryFoodModel(
+                id = 2,
+                title = "Manis",
+                isSelected = false
+            ),
+            CategoryFoodModel(
+                id = 3,
+                title = "Asam",
+                isSelected = false
+            ),
+            CategoryFoodModel(
+                id = 4,
+                title = "Asin",
+                isSelected = false
+            ),
+            CategoryFoodModel(
+                id = 5,
+                title = "Sate",
+                isSelected = false
+            ),
+            CategoryFoodModel(
+                id = 6,
+                title = "Bakso",
+                isSelected = false
+            ),
+        )
+        return listData
+
+
     }
 
     override fun onDestroy() {

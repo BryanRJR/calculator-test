@@ -1,13 +1,10 @@
-package com.example.bcas_training_android
+package com.example.bcas_training_android.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bcas_training_android.databinding.ItemCategoryBinding
-import com.example.bcas_training_android.databinding.ItemNewsBinding
-import com.example.bcas_training_android.home.HomeMainAdapter
 import com.example.bcas_training_android.model.CategoryModel
-import com.example.bcas_training_android.model.NewsModel
 
 class CategoryAdapter (private val dataCategory: List<CategoryModel>
 ): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
@@ -33,7 +30,7 @@ class CategoryAdapter (private val dataCategory: List<CategoryModel>
 
 
     override fun getItemCount(): Int = dataCategory.size
-    override fun onBindViewHolder(holder: CategoryAdapter.CategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.bindView(dataCategory[position])
     }
 }

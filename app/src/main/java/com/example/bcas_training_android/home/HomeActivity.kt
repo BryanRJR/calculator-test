@@ -1,15 +1,9 @@
 package com.example.bcas_training_android.home
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat.startActivity
-import com.example.bcas_training_android.CategoryAdapter
-import com.example.bcas_training_android.ProfileActivity
+import com.example.bcas_training_android.adapter.CategoryAdapter
 import com.example.bcas_training_android.R
-import com.example.bcas_training_android.auth.LoginActivity.Companion.KEY_EMAIL
-import com.example.bcas_training_android.auth.LoginActivity.Companion.KEY_PASSWORD
-import com.example.bcas_training_android.calculator.CalculatorActivity
 import com.example.bcas_training_android.databinding.ActivityHomeBinding
 import com.example.bcas_training_android.detail.DetailActivity
 import com.example.bcas_training_android.model.CategoryModel
